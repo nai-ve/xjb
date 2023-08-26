@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> NEYC新疆部</title>
+		<link rel="stylesheet" href="css/index.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			}
+
+			/*导航栏开始*/
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			header {
+				width: 100vw;
+			}
+
+			nav {
+				box-sizing: border-box;
+				width: 100%;
+				padding: 10px 20px;
+				background-color: #1e90ff;
+				display: flex;
+			}
+
+			nav a {
+				text-decoration: none;
+				color: white;
+			}
+
+			.nav-left {
+				font-size: 36px;
+				margin-right: 30px;
+				/* background-color: darkcyan; */
+			}
+
+			.nav-right {
+				flex: 1;
+				/* background-color: darkgreen; */
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+			.nav-right>ul {
+				display: flex;
+				list-style: none;
+			}
+
+			.nav-right>ul>li>a {
+				font-size: 20px;
+				display: inline-block;
+				padding: 0 15px;
+				color: white;
+			}
+
+			.nav-right>ul>li>a:hover {
+				color: rgb(228, 228, 228);
+			}
+
+			div.nav-right>ul>li>a.chose {
+				color: #fff;
+			}
+
+			.search-box {
+				display: flex;
+				align-items: center;
+			}
+
+			.search-box>input {
+				width: 200px;
+				height: 36px;
+				outline: none;
+				border: none;
+				font-size: 20px;
+				padding: 0 10px;
+				margin-right: 10px;
+				border-radius: 4px;
+			}
+
+			.search-box>button {
+				border: 2px solid #fff;
+				background: none;
+				width: 80px;
+				height: 36px;
+				color: #fff;
+				font-size: 20px;
+				border-radius: 4px;
+			}
+
+			.search-box>button:hover {
+				background-color: #fff;
+				color: #000;
+			}
+
+			label[for="nav-checkbox"] {
+				display: none;
+			}
+
+			#nav-checkbox {
+				width: 0;
+				height: 0;
+			}
+
+			@media screen and (max-width: 700px) {
+				nav {
+					flex-wrap: wrap;
+					justify-content: space-between;
+				}
+
+				label[for="nav-checkbox"] {
+					display: initial;
+					/* background-color: darkmagenta; */
+					width: 50px;
+					height: 35px;
+					font-size: 40px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border: rgb(173, 173, 173) 2px solid;
+					color: rgb(173, 173, 173);
+					border-radius: 4px;
+				}
+
+				label[for="nav-checkbox"]:hover {
+					color: #fff;
+					border: #fff 2px solid;
+				}
+
+				#nav-checkbox:checked+label {
+					background-color: #fff;
+					color: #000;
+					border: #fff 2px solid;
+				}
+
+				.nav-left {
+					margin: 0;
+				}
+
+				.nav-right {
+					display: none;
+					flex: 0 0 100%;
+					width: 100%;
+					flex-direction: column;
+					justify-content: initial;
+					align-items: initial;
+				}
+
+				.nav-right>ul {
+					flex-direction: column;
+				}
+
+				.nav-right>ul>li>a {
+					/* background-color: rgb(153, 57, 57); */
+					width: 100%;
+					padding: 15px 0;
+				}
+
+				#nav-checkbox:checked~.nav-right {
+					display: flex;
+				}
+			}
+
+			@media screen and (max-width: 380px) {
+				.search-box {
+					flex-direction: column;
+					align-items: initial;
+				}
+
+				.search-box>input {
+					width: auto;
+					margin: 0 0 10px 0;
+				}
+			}
+
+			/*导航栏结束*/
+			/*海报开始*/
+			.b1 {
+				width: 100%;
+				height:200px;
+				position: relative;
+			}
+			.small {
+				width: 100%;
+				height: 200px;
+				position: flex;
+			}
+
+			/*海报结束*/
+			/*主体开始*/
+			.zhuti {
+				width: 100%;
+				height: 600px;
+				margin-top: 0px;
+				background-image: url(images/1.png);
+			 }
+
+			/*图片轮播开始*/
+			        .admin {
+            width: 350px;
+            height: 230px;
+            position: relative;
+            top: 5px;
+            left: 12px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .b {
+            width: 96%;
+            height: 200px;
+            border-radius:25px;
+            position: absolute;
+            background-size: cover;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        .b:nth-child(1) {
+            background-image: url("/img/13.jpg");
+        }
+
+        .b:nth-child(2) {
+            background-image: url("/img/11.jpg");
+        }
+
+        .b:nth-child(3) {
+            background-image: url("/img/13.jpg");
+        }
+
+        .b:nth-child(4) {
+            background-image: url("/img/14.jpg");
+        }
+
+        .b:nth-child(5) {
+            background-image: url("/img/5.jpg");
+        }
+
+        .b:nth-child(6) {
+            background-image: url("/img/6.jpg");
+        }
+
+        .b:nth-child(7) {
+            background-image: url("/img/w1.png");
+        }
+
+        .b:nth-child(8) {
+            background-image: url("/img/w7.jpg");
+        }
+
+        .b:nth-child(9) {
+            background-image: url("/img/w6.jpg");
+        }
+
+        .b.bb {
+            opacity: 1;
+        }
+
+        .c,
+        .d 
+            width: 70px;
+            height: 250px;
+            position: absolute;
+            top: 0;
+            line-height: 250px;
+            text-align: center;
+            font-size: 70px;
+            color: blueviolet;
+            cursor: pointer;
+            user-select: none;
+            transition: .3s;
+        }
+
+        .c:hover,
+        .d:hover {
+            background-color: rgba(255, 255, 255, .6);
+            color: #000;
+        }
+
+        .c {
+            left: 0px;
+        }
+
+        .d {
+            right: 0px;
+        }
+
+        .e1 {
+            width: 95%;
+            height: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 205px;
+            margin: auto;
+
+        }
+
+        .e {
+            border-radius: 50%;
+            border: #000 solid 5px;
+            width: 10px;
+            height: 10px;
+            opacity: .7;
+            cursor: pointer;
+            transition: .4s;
+            /* background-color: #fff; */
+        }
+
+        .e:hover {
+            opacity: 1;
+            background-color: rgba(162, 59, 202, 0.7);
+        }
+
+        .e.ee {
+            opacity: 1;
+            background-color: black;
+        }
+			/*图片轮播结束*/
+			/*主体结束*/
+			/*表格开始*/
+			.biaoge{
+				width: 100%;
+				height: 1300px;
+				background-color: #6495ed;
+				margin-top: 0;
+			}
+			.container{
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				display: flex;
+				justify-content: center;
+			}
+			.contentbox{
+				width: 320px;
+				height: 380px;
+        margin-top: 30px;
+        margin-left: 20px;
+				position: relative;
+				background-color: #282828;/*表格底色*/
+				display: inline-block;
+				border-radius: 15px;
+				transition: 0.3s;
+			}
+			.contentbox img{
+			  width: 100%;
+			  height: 250px;
+			  border-radius: 15px;
+			}
+			.contentbox p{
+				position: relative;
+				left: 0px;
+				color: white;
+				margin: 20px;
+				font-size: 20px;
+			}
+			.contentbox:hover{
+				scale: 0.97;
+				box-shadow: none;
+			}
+			/*表格结束*/
+			/*底部开始*/
+			.footer{
+				width: 100%;
+				height: 15%;
+				background-color: #1e90ff;
+				position: flex;
+			}
+			footer p{
+				color: white;
+				font-size: 20px;
+				margin-left: 5px;
+			}
+			/*底部结束*/
+		</style>
+	</head>
+	<body>
+		<!--导航栏开始-->
+		<header>
+			<nav>
+				<a href="" class="nav-left">NEYC新疆部</a>
+				<input type="checkbox" id="nav-checkbox">
+				<label for="nav-checkbox">&#9776</label>
+				<div class="nav-right">
+					<ul>
+						<li><a href="/index.html" class="chose">首页</a></li>
+						<li><a href="/schoolimg.html">校园</a></li>
+						<li><a href="https://www.baidu.com/s?ie=UTF-8&wd=%E4%B8%9C%E5%8C%97%E8%82%B2%E6%89%8D%E5%AD%A6%E6%A0%A1%E4%BD%8D%E7%BD%AE">位置</a></li>
+						<li><a href="/we.html">我们</a></li>
+					</ul>
+					<div class="search-box">
+						<input type="text" placeholder="搜索">
+						<button>搜索</button>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!--导航栏结束-->
+		<!--海报开始-->
+		<div class="b1">
+			<img class="small" src="/img/GIF1.gif"/>
+		</div>
+		<!--海报结束-->
+		<!--主体开始-->
+		<div class="zhuti">
+			<!--图片轮播开始-->
+			    <div class="admin">
+
+        <div class="a">
+
+            <ul>
+                <li class="b bb"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+                <li class="b"></li>
+            </ul>
+        </div>
+        <div class="c"></div>
+                <div class="d"></div>
+                <ul class="e1">
+                    <li data-x="0" class="e ee"></li>
+                    <li data-x="1" class="e"></li>
+                    <li data-x="2" class="e"></li>
+                    <li data-x="3" class="e"></li>
+                    <li data-x="4" class="e"></li>
+                    <li data-x="5" class="e"></li>
+                    <li data-x="6" class="e"></li>
+                    <li data-x="7" class="e"></li>
+                    <li data-x="8" class="e"></li>
+                </ul>
+        </div>
+
+        <script>
+            var b = document.getElementsByClassName("b")
+            var e = document.getElementsByClassName("e")
+            var c = document.querySelector(".c")
+            var d = document.querySelector(".d")
+            var inder = 0
+            var tis
+            // alert(b.length)
+            function aa() {
+                for (var i = 0; i < b.length; i++) {
+                    b[i].className = "b"
+                }
+                for (var i = 0; i < e.length; i++) {
+                    e[i].className = "e"
+                }
+            }
+            function aaa() {
+                aa()
+                b[inder].className = "b bb"
+                e[inder].className = "e ee"
+            }
+            c.onclick = function () {
+                clearInterval(tis)
+                ts()
+                if (inder > 0) {
+                    inder--
+                } else {
+                    inder = b.length - 1
+                }
+                aaa()
+            }
+            d.onclick = function () {
+                clearInterval(tis)
+                ts()
+                if (inder < b.length - 1) {
+                    inder++
+                } else {
+                    inder = 0
+                }
+                aaa()
+            }
+            ts()
+            function ts() {
+                tis = setInterval(function () {
+                    aaa()
+                    if (inder < b.length - 1) {
+                        inder++
+                    } else {
+                        inder = 0
+                    }
+                }, 2000);
+            }
+
+            for (var i = 0; i < e.length; i++) {
+                e[i].onclick = function () {
+                    var p = this.getAttribute("data-x")
+                    inder = p
+                    aaa()
+                    // alert(p)
+                }
+            }
+        </script>
+
+			
+			<!--图片轮播结束-->
+			<!--主体结束-->
+			<!--表格开始-->
+			<div class="biaoge">
+					<div class="contentbox">
+					  <div><img class="t1"  src="/img/10.jpg" alt=""></div>
+						<p>东北育才学校新疆部是东北育才学校从2010年开始承担辽宁省内地新疆高中班扩招任务而创建的新疆部。
+</p>
+					</div>
+					<div class="contentbox">
+					  <div><img src="/img/11.jpg"></div>
+						<p>东北育才新疆部旨在坚持以铸牢中华民族共同体意识为主线，把民族团结教育贯穿学校教育教学各环节全过程</p>
+					</div>
+					<div class="contentbox">
+					  <div><img src="/img/14.jpg"></div>
+						<p> welcome NEYC新疆部</p>
+					</div>
+			</div>
+			<!--表格结束-->
+			<footer class="footer">
+				<p class="zuozhe">作者:Kevin</p>
+				<p youxiang>邮箱：676932025@qq.com</p>
+			</footer>
+	</body>
+</html>
