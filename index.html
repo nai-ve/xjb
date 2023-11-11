@@ -1,553 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title> NEYC新疆部</title>
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YC·疆域</title>
+    <style>
+        /* 横幅图 */
+        .banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 210px;
+            background-color: black;
+            overflow: hidden;
+        }
 
-		/*导航栏开始*/
-		* {
-			margin: 0;
-			padding: 0;
-		}
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
 
-		header {
-			width: 100vw;
-		}
+        /* 主图 */
+        .main-image {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 175px;
+            height: 200px;
+            width: 340px;
+             }
 
-		nav {
-			box-sizing: border-box;
-			width: 100%;
-			padding: 10px 20px;
-			background-color: #1e90ff;
-			display: flex;
-		}
+        .main-image-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: white;
+        }
+         .p1{
+          height: 200px;
+          width: 340px;
+        }
+        /* 添加标题样式 */
+        .section-title {
+            position: absolute;
+            top: 260px; /* 调整距离横幅图的位置 */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
 
-		nav a {
-			text-decoration: none;
-			color: white;
-		}
+        /* 工具栏 */
+        .toolbar {
+            position: absolute;
+            bottom: 435px;
+            left: 0;
+            right: 0;
+            height: 47px;
+            background-color: green;
+            display: flex;
+            justify-content: center;
+        }
 
-		.nav-left {
-			font-size: 36px;
-			margin-right: 30px;
-			/* background-color: darkcyan; */
-		}
+        .toolbar a {
+            flex: 1;
+            text-align: center;
+            line-height: 50px;
+            font-size: 19px;
+            text-decoration: none;
+            color: white;
+            position: relative; /* 添加这一行 */
 
-		.nav-right {
-			flex: 1;
-			/* background-color: darkgreen; */
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-		}
+        }
+                .toolbar a::before { 
+            content: "|"; 
+            position: absolute; 
+            left: -15px; 
+            color: white; 
+        }
 
-		.nav-right>ul {
-			display: flex;
-			list-style: none;
-		}
+        /* 半透明导航栏 */
+          nav {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  height: 43px;
+                  background-color: rgba(0, 0, 0, 0.5);
+                }
+                                /* 半透明导航栏文字样式 */
+                                nav span {
+                                  color: white;
+                                  font-weight: bold;
+                                  display: inline-block;
+                                  line-height: 45px;
+                                  font-size: 24px;
+                                }
+                    /*6个矩形*/
+                                .black-rectangle {                   width: 150px;
+                                          height: 90px;
+                                          background-color: green;
+                                          color: white;
+                                          font-size: 18px;
+                                          text-align: center;
+                                          line-height: 90px;
+                                          position: absolute;
+                                          border-radius: 7px;
+                                        }
+                                
+                                        /* 矩形 */
+                                        .black-rectangle-1 {
+                                          top: 540px;
+                                          left: 15px;
+                                        }
+                                
+                                        .black-rectangle-2 {
+                                          top: 540px;
+                                          left: 195px;
+                                        }
+                                
+                                        .black-rectangle-3 {
+                                          top: 640px;
+                                          left: 15px;
+                                        }
+                                
+                                        .black-rectangle-4 {
+                                          top: 640px;
+                                          left: 195px;
+                                        }
+                    /*工具栏2*/
+                    .use{
+                      width: 100%;
+                      height: 70px;
+                      background-color:green; 
+                      position:absolute;
+                      top: 750px;
+                    }
+                    .tu1{
+                      position: absolute; margin-left: 35px;
+                      height:50px;
+                      margin-top: 10px;
+                    }
+                    .tu2{
+                      position: absolute; margin-left: 155px;
+                      margin-top: 15px;
+                    height:40px;
+                    }   
+                    .tu3{
+                      position: absolute; margin-left: 270px;
+                      margin-top: 10px;
+                      height: 45px;
+                    }
+                  /* 添加标题样式 */
+            .xiaoxu-title {
+                    position: absolute;
+                    top: 820px;
+                    /* 调整距离横幅图的位置 */
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 28px;
+                    font-weight: bold;
+                    color: black;
+                  }
+        /* 图片表格 */
+        .image-table { 
+            display:flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+           overflow-x: auto;/*悬浮*/
+           margin-top:850px;
 
-		.nav-right>ul>li>a {
-			font-size: 20px;
-			display: inline-block;
-			padding: 0 15px;
-			color: white;
-		}
+        }
 
-		.nav-right>ul>li>a:hover {
-			color: rgb(228, 228, 228);
-		}
+        .image-table img {
+            width: 290px;
+            height: 180px;
+          border-radius: 15px;
+          margin-right: 5px;
+          margin-left: 5px;
+        }
+        /*YC·简介*/
+                /* 添加标题样式 */
+                .jianjie-title {
+                  position: absolute;
+                  top: 1070px;
+                  /* 调整距离横幅图的位置 */
+                  left: 50%;
+                  transform: translateX(-50%);
+                  font-size: 28px;
+                  font-weight: bold;
+                  color: black;
+                }
+              .jianiie{
+                width: 330px;
+                height: 500px;
+                position:absolute;
+                top: 1140px;
+                left: 15px;
+                background-color: green;
+                border-radius: 20px;
+                color: white;
+              }
+              .jianiie-img{
+                width: 150px;
+                height:120px;
+                border-radius: 10px;
+                margin:10px;
+              }
+              /*新闻*/
+                              /* 添加标题样式 */
+          .xinwen-title {
+                  position: absolute;
+                  top: 1630px;
+                  /* 调整距离横幅图的位置 */
+                  left: 50%;
+                  transform: translateX(-50%);
+                  font-size: 28px;
+                  font-weight: bold;
+                  color: black;
+                }
+               /*新闻内容*/
+    .di{
+      width: 340px;
+      height: 430px;
+      background-color: green;
+      border-radius: 10px;
+      position: absolute;
+      top: 1725px;
+      left: 10px;
+    }
+    .xinwen1{
+      width: 340px;
+      height: 90px;
+      background-color: green;
+      border-bottom: 3px  solid white;
+      position: absolute;
+      margin-top: 0px;
 
-		div.nav-right>ul>li>a.chose {
-			color: #fff;
-		}
-
-		.search-box {
-			display: flex;
-			align-items: center;
-		}
-
-		.search-box>input {
-			width: 200px;
-			height: 36px;
-			outline: none;
-			border: none;
-			font-size: 20px;
-			padding: 0 10px;
-			margin-right: 10px;
-			border-radius: 4px;
-		}
-
-		.search-box>button {
-			border: 2px solid #fff;
-			background: none;
-			width: 80px;
-			height: 36px;
-			color: #fff;
-			font-size: 20px;
-			border-radius: 4px;
-		}
-
-		.search-box>button:hover {
-			background-color: #fff;
-			color: #000;
-		}
-
-		label[for="nav-checkbox"] {
-			display: none;
-		}
-
-		#nav-checkbox {
-			width: 0;
-			height: 0;
-		}
-
-		@media screen and (max-width: 700px) {
-			nav {
-				flex-wrap: wrap;
-				justify-content: space-between;
-			}
-
-			label[for="nav-checkbox"] {
-				display: initial;
-				/* background-color: darkmagenta; */
-				width: 50px;
-				height: 35px;
-				font-size: 40px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				border: rgb(173, 173, 173) 2px solid;
-				color: rgb(173, 173, 173);
-				border-radius: 4px;
-			}
-
-			label[for="nav-checkbox"]:hover {
-				color: #fff;
-				border: #fff 2px solid;
-			}
-
-			#nav-checkbox:checked+label {
-				background-color: #fff;
-				color: #000;
-				border: #fff 2px solid;
-			}
-
-			.nav-left {
-				margin: 0;
-			}
-
-			.nav-right {
-				display: none;
-				flex: 0 0 100%;
-				width: 100%;
-				flex-direction: column;
-				justify-content: initial;
-				align-items: initial;
-			}
-
-			.nav-right>ul {
-				flex-direction: column;
-			}
-
-			.nav-right>ul>li>a {
-				/* background-color: rgb(153, 57, 57); */
-				width: 100%;
-				padding: 15px 0;
-			}
-
-			#nav-checkbox:checked~.nav-right {
-				display: flex;
-			}
-		}
-
-		@media screen and (max-width: 380px) {
-			.search-box {
-				flex-direction: column;
-				align-items: initial;
-			}
-
-			.search-box>input {
-				width: auto;
-				margin: 0 0 10px 0;
-			}
-		}
-
-		/*导航栏结束*/
-		/*海报开始*/
-		.b1 {
-			width: 100%;
-			height: 200px;
-			position: relative;
-		}
-
-		.small {
-			width: 100%;
-			height: 200px;
-			position: flex;
-		}
-
-		/*海报结束*/
-		/*主体开始*/
-		.zhuti {
-			width: 100%;
-			height: 600px;
-			margin-top: 0px;
-			background-color: #f0f0f0;
-		}
-
-		/*图片轮播开始*/
-		.admin {
-			width: 350px;
-			height: 230px;
-			position: relative;
-			top: 5px;
-			left: 27px;
-		}
-
-		li {
-			list-style: none;
-		}
-
-		.b {
-			width: 96%;
-			height: 200px;
-			border-radius: 25px;
-			position: absolute;
-			background-size: cover;
-			opacity: 0;
-			transition: .5s;
-		}
-
-		.b:nth-child(1) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/13.jpg");
-		}
-
-		.b:nth-child(2) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/11.jpg");
-		}
-
-		.b:nth-child(3) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/13.jpg");
-		}
-
-		.b:nth-child(4) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/14.jpg");
-		}
-
-		.b:nth-child(5) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/5.jpg");
-		}
-
-		.b:nth-child(6) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/6.jpg");
-		}
-
-		.b:nth-child(7) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/w1.png");
-		}
-
-		.b:nth-child(8) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/w7.jpg");
-		}
-
-		.b:nth-child(9) {
-			background-image: url("https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/w6.jpg");
-		}
-
-		.b.bb {
-			opacity: 1;
-		}
-
-		.c,
-		.d {
-			width: 70px;
-			height: 250px;
-			position: absolute;
-			top: 0;
-			line-height: 250px;
-			text-align: center;
-			font-size: 70px;
-			color: blueviolet;
-			cursor: pointer;
-			user-select: none;
-			transition: .3s;
-		}
-
-		.c:hover,
-		.d:hover {
-			background-color: rgba(255, 255, 255, .6);
-			color: #000;
-		}
-
-		.c {
-			left: 0px;
-		}
-
-		.d {
-			right: 0px;
-		}
-
-		.e1 {
-			width: 95%;
-			height: 16px;
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 205px;
-			margin: auto;
-
-		}
-
-		.e {
-			border-radius: 50%;
-			border: #000 solid 5px;
-			width: 10px;
-			height: 10px;
-			opacity: .7;
-			cursor: pointer;
-			transition: .4s;
-			/* background-color: #fff; */
-		}
-
-		.e:hover {
-			opacity: 1;
-			background-color: rgba(162, 59, 202, 0.7);
-		}
-
-		.e.ee {
-			opacity: 1;
-			background-color: black;
-		}
-
-		/*图片轮播结束*/
-		/*主体结束*/
-		/*表格开始*/
-		.biaoge {
-			width: 100%;
-			height: 1300px;
-			background-color: #6495ed;
-			margin-top: 0;
-		}
-
-		.container {
-			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			display: flex;
-			justify-content: center;
-		}
-
-		.contentbox {
-			width: 320px;
-			height: 380px;
-			margin-top: 30px;
-			margin-left: 35px;
-			position: relative;
-			background-color: #282828;
-			/*表格底色*/
-			display: inline-block;
-			border-radius: 15px;
-			transition: 0.3s;
-		}
-
-		.contentbox img {
-			width: 100%;
-			height: 250px;
-			border-radius: 15px;
-		}
-
-		.contentbox p {
-			position: relative;
-			left: 0px;
-			color: white;
-			margin: 20px;
-			font-size: 20px;
-		}
-
-		.contentbox:hover {
-			scale: 0.97;
-			box-shadow: none;
-		}
-
-		/*表格结束*/
-		/*底部开始*/
-		.footer {
-			width: 100%;
-			height: 15%;
-			background-color: #1e90ff;
-			position: flex;
-		}
-
-		footer p {
-			color: white;
-			font-size: 20px;
-			margin-left: 5px;
-		}
-
-		/*底部结束*/
-	</style>
+    }
+    .xinwen2 {
+          width: 340px;
+          height: 90px;
+          background-color: green;
+          border-bottom: 3px solid white;
+          position: absolute;
+          top: 103px;
+    
+        }
+            .xinwen3 {
+              width: 340px;
+              height: 90px;
+              background-color: green;
+              border-bottom: 3px solid white;
+              position: absolute;
+              top: 198px;
+        
+            }
+                        .xinwen4 {
+                          width: 340px;
+                          height: 90px;
+                          background-color: green;
+                          border-bottom: 3px solid white;
+                          position: absolute;
+                          top: 293px;
+            
+                        }
+    .im{
+      width: 100px;
+      height:90px;
+    }
+  .z1{
+     color: white;
+     position: absolute;
+     font-size: 16px;
+    top: 40px;
+   }
+   /*底部横幅*/
+   .last{
+     width: 100%;
+     height: 230px;
+     background-color: green;
+     position: absolute;
+     top: 2200px;
+   }
+    .dibu{
+      color: white;
+      font-size: 16px;
+      margin-left: 10px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }  
+    </style>
 </head>
-
 <body>
-	<!--导航栏开始-->
-	<header>
-		<nav>
-			<a href="" class="nav-left">NEYC新疆部</a>
-			<input type="checkbox" id="nav-checkbox">
-			<label for="nav-checkbox">&#9776</label>
-			<div class="nav-right">
-				<ul>
-					<li><a href="./" class="chose">首页</a></li>
-					<li><a href="./schoolimg.html">校园</a></li>
-					<li><a
-							href="https://www.baidu.com/s?ie=UTF-8&wd=%E4%B8%9C%E5%8C%97%E8%82%B2%E6%89%8D%E5%AD%A6%E6%A0%A1%E4%BD%8D%E7%BD%AE">位置</a>
-					</li>
-					<li><a href="./we.html">我们</a></li>
-				</ul>
-				<div class="search-box">
-					<input type="text" placeholder="搜索">
-					<button>搜索</button>
-				</div>
-			</div>
-		</nav>
-	</header>
-	<!--导航栏结束-->
-	<!--海报开始-->
-	<div class="b1">
-		<img class="small" src="https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/11.jpg" />
-	</div>
-	<!--海报结束-->
-	<!--主体开始-->
-	<div class="zhuti">
-		<!--图片轮播开始-->
-		<div class="admin">
+    <!-- 横幅图 -->
+    <div class="banner">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s10.jpg" alt="">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s7.jpg" alt="">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s5.jpg" alt="">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s8.jpg" alt="">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s9.jpg" alt="">
+    </div>
+    <!-- 主图 -->
+    <div class="main-image">
+      <img class="p1" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s3.jpg">
+    <div class="main-image-text">
+            welcometoNEYC
+        </div>
+    </div>
+    <!-- 添加标题“YC·新疆部” -->
+    <h1 class="section-title">YC·新疆部</h1>
 
-			<div class="a">
-
-				<ul>
-					<li class="b bb"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-					<li class="b"></li>
-				</ul>
-			</div>
-			<div class="c"></div>
-			<div class="d"></div>
-			<ul class="e1">
-				<li data-x="0" class="e ee"></li>
-				<li data-x="1" class="e"></li>
-				<li data-x="2" class="e"></li>
-				<li data-x="3" class="e"></li>
-				<li data-x="4" class="e"></li>
-				<li data-x="5" class="e"></li>
-				<li data-x="6" class="e"></li>
-				<li data-x="7" class="e"></li>
-				<li data-x="8" class="e"></li>
-			</ul>
-		</div>
-
-		<script>
-			var b = document.getElementsByClassName("b")
-			var e = document.getElementsByClassName("e")
-			var c = document.querySelector(".c")
-			var d = document.querySelector(".d")
-			var inder = 0
-			var tis
-			// alert(b.length)
-			function aa() {
-				for (var i = 0; i < b.length; i++) {
-					b[i].className = "b"
-				}
-				for (var i = 0; i < e.length; i++) {
-					e[i].className = "e"
-				}
-			}
-			function aaa() {
-				aa()
-				b[inder].className = "b bb"
-				e[inder].className = "e ee"
-			}
-			c.onclick = function () {
-				clearInterval(tis)
-				ts()
-				if (inder > 0) {
-					inder--
-				} else {
-					inder = b.length - 1
-				}
-				aaa()
-			}
-			d.onclick = function () {
-				clearInterval(tis)
-				ts()
-				if (inder < b.length - 1) {
-					inder++
-				} else {
-					inder = 0
-				}
-				aaa()
-			}
-			ts()
-			function ts() {
-				tis = setInterval(function () {
-					aaa()
-					if (inder < b.length - 1) {
-						inder++
-					} else {
-						inder = 0
-					}
-				}, 2000);
-			}
-
-			for (var i = 0; i < e.length; i++) {
-				e[i].onclick = function () {
-					var p = this.getAttribute("data-x")
-					inder = p
-					aaa()
-					// alert(p)
-				}
-			}
-		</script>
-
-
-		<!--图片轮播结束-->
-		<!--主体结束-->
-		<!--表格开始-->
-		<div class="biaoge">
-			<div class="contentbox">
-				<div><img class="t1" src="https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/10.jpg" alt=""></div>
-				<p>东北育才学校新疆部是东北育才学校从2010年开始承担辽宁省内地新疆高中班扩招任务而创建的新疆部。
-				</p>
-			</div>
-			<div class="contentbox">
-				<div><img src="https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/11.jpg"></div>
-				<p>东北育才新疆部旨在坚持以铸牢中华民族共同体意识为主线，把民族团结教育贯穿学校教育教学各环节全过程</p>
-			</div>
-			<div class="contentbox">
-				<div><img src="https://gcore.jsdelivr.net/gh/nai-ve/xjb@master/img/14.jpg"></div>
-				<p> welcome NEYC新疆部</p>
-			</div>
-		</div>
-		<!--表格结束-->
-		<footer class="footer">
-			<p class="zuozhe">作者:Kevin</p>
-			<p youxiang>邮箱：676932025@qq.com</p>
-		</footer>
-</body>
-
+    <!-- 工具栏 -->
+    <div class="toolbar">
+        <a href="/we.html">我们</a>
+        <a href="https://www.baidu.com/s?ie=UTF-8&wd=%E4%B8%9C%E5%8C%97%E8%82%B2%E6%89%8D%E5%AD%A6%E6%A0%A1%E4%BD%8D%E7%BD%AE">地址</a>
+        <a href="/photo.html">摄影</a>
+        <a href="#">其他</a>
+    </div>
+    <script>
+        var bannerImages = document.querySelectorAll('.banner img');
+        var currentIndex = 0;
+        var interval = setInterval(function() {
+            bannerImages[currentIndex].style.display = 'none';
+            currentIndex = (currentIndex + 1) % bannerImages.length;
+            bannerImages[currentIndex].style.display = 'block';
+        }, 3000);
+    </script>
+    <!-- 半透明导航栏 -->
+        <nav>            <span>NEYC新疆部</span>            <div class="black-rectangle black-rectangle-1">振兴育才</div>
+            <div class="black-rectangle black-rectangle-2">扬我国威</div>
+            <div class="black-rectangle black-rectangle-3">创造一流</div>
+            <div class="black-rectangle black-rectangle-4">走向世界</div>
+            <div class="use">
+             <a  href="https://www.neyc.cn/"><img class=" tu1" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/icon1.png"></a>
+               <a  href= "https://b23.tv/BxMMlHu"><img class=" tu2" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/icon2.png"></a>
+             <a  href="https://ml.mbd.baidu.com/r/19grxL6k0Te?f=cp&u=c50967fd32947d20"> <img class=" tu3" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/icon3.png"></a>
+            </div>
+            </div>
+        <!-- 添加标题“YC·疆域” -->
+    <h1 class="xiaoxu-title">YC·疆域</h1>
+    <!-- 图片表格 -->
+    <div class="image-table">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s2.jpg" alt="">
+        <img src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s1.jpg" alt="">
+        <img  src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s6.jpg"  alt="">
+        <img  src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s11.jpg"  alt="">
+        <img  src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s4.jpg"  alt="">
+    </div>
+    <!--简介-->
+        <!-- 添加标题“YC·简介” -->
+    <h1 class="jianjie-title">YC·简介</h1>
+<div class="jianiie">
+  <img class="jianiie-img" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s12.jpg">
+ <p>
+东北育才学校简介
+东北育才学校位于辽宁省沈阳市，是由张闻天、徐特立等老一代无产阶级革命家创建的一所具有光荣革命传统的学校，是沈阳市教育局直属的省重点中学，辽宁省首批示范性高中 </p>
+<p>东北育才学校创建于1949年，时名东北第一育才小学，1981年，学校成为沈阳市教育局直属学校，并被列为辽宁省重点中学。截至2017年5月，学校共有8个校区14个学部（不含网校），占地面积约80万平方米，建筑面积约42万平方米，学生人数发展到15000余人，教师1000余人</p>
+</div>
+<!--新闻-->
+        <!-- 添加标题“YC·新闻” -->
+    <h1 class="xinwen-title">YC·新闻</h1>
+     <div class="di">
+       <div class="xinwen1">
+         <img class=" im" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s13.jpg" alt="">
+         <p1 class="z1">新疆部高二年级主持浑南校区升国旗仪式</p1>
+       </div>
+       <div class="xinwen2">
+         <img class=" im" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s14.jpg" alt="">
+         <p1 class="z1">新疆部承办东北育才学校浑南校区第八十届田径运动会</p1>
+       </div>
+       <div class="xinwen3">
+         <img class=" im" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s15.jpg" alt="">
+         <p1 class="z1">新疆部同学返回校园</p1>
+       </div>
+       <div class="xinwen4">
+         <img class=" im" src="https://gcore.jsdelivr.net/gh/nai-ve/nai-ve.github.io@main/img/s16.jpg" alt="">
+         <p1 class="z1">新疆部高一和高二年级同学开启返疆之旅</p1>
+       </div>
+     </div>
+     <!--底部横幅-->
+     <div class="last">
+       <p class="dibu">版权所有©星环Naive工作室</p>
+       <p class="dibu">反馈意见: 676932025@qq.com
+       <p class="dibu">2023.11.12</p>
+       <p class="dibu">感谢名单: 糖果城工作室/慧玲金阁/AYJ/格罗布奥特曼</p>
+     </div>
+   </body>
 </html>
